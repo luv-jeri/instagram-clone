@@ -1,5 +1,15 @@
 import s from "./Home.module.css";
+import { SideBar, Content } from "@components";
 
 export const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <div className={s.container}>
+      <div>
+        <SideBar />
+      </div>
+      <div>
+        <Content />
+      </div>
+    </div>
+  );
 };

@@ -2,8 +2,21 @@ import s from "./SignUp.module.css";
 import { Button, Divider, Input } from "@components";
 import { FacebookIcon } from "@icons";
 import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 export const SignUp = () => {
+  const { signUp } = useContext(AuthContext);
+
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async () => {
+    signUp({ email, password, fullName, userName });
+  };
+
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
@@ -35,15 +48,29 @@ export const SignUp = () => {
           <h5>OR</h5>
         </Divider>
         <div className={s.form}>
-          <Input placeholder="Email" />
-          <Input placeholder="Full Name" />
-          <Input placeholder="Username" />
-          <Input placeholder="Password" />
+          <Input
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            placeholder="Full Name"
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <Input
+            placeholder="Username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <Input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <Button
             style={{
               width: "100%",
               margin: "1rem auto",
             }}
+            onClick={handleSubmit}
           >
             Sign up
           </Button>
