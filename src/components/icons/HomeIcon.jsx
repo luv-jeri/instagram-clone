@@ -2,7 +2,7 @@ export const HomeIcon = (props) => {
   return (
     <svg
       aria-label="Home"
-      class="x1lliihq x1n2onr6 x5n08af"
+      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"

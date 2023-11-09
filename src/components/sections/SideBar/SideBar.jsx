@@ -1,52 +1,44 @@
 import s from "./Sidebar.module.css";
-import { LogoIcon, HomeIcon } from "@icons";
+import { LogoIcon, HomeIcon, PlusIcon } from "@icons";
+import { Modal, CreatePostModal } from "@components";
+import { useState } from "react";
 
 export const SideBar = () => {
+  const [open, setOpen] = useState(false);
+ 
+  const handleModal = () => {
+    setOpen(!open);
+  };
+
   const list = [
     {
       title: "Home",
       icon: <HomeIcon />,
       navigator: true,
       link: "/",
-    },
-    {
-      title: "Search",
-      icon: <HomeIcon />,
-      navigator: false,
-    },
-    {
-      title: "Explore",
-      icon: <HomeIcon />,
-      navigator: true,
-      link: "/explore",
-    },
-    {
-      title: "Notifications",
-      icon: <HomeIcon />,
-      link: "/notifications",
-    },
-    {
-      title: "Create",
-      icon: <HomeIcon />,
-      navigator: false,
+      onClick: null,
     },
 
     {
-      title: "Profile",
-      icon: <HomeIcon />,
-      link: "/profile",
+      title: "Create",
+      icon: <PlusIcon />,
+      navigator: false,
+      onClick: handleModal,
     },
   ];
 
   return (
     <section className={s.container}>
+      <Modal open={open} handleModal={handleModal}>
+        <CreatePostModal />
+      </Modal>
       <div className={s.logo}>
         <LogoIcon />
       </div>
       <div className={s.menu}>
         {list.map((item, index) => {
           return (
-            <div key={index} className={s.item}>
+            <div key={index} className={s.item} onClick={item.onClick}>
               {item.icon}
               <p>{item.title}</p>
             </div>

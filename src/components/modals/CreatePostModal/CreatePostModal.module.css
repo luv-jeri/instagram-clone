@@ -1,0 +1,29 @@
+.wrapper {
+  height: 80vh;
+  width: 45vw;
+  background-color: #262626;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+
+  text-align: center;
+  padding: 1rem 0rem;
+  border-bottom: 0.01rem solid rgb(91, 91, 91);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
