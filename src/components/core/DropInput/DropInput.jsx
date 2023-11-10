@@ -20,8 +20,6 @@ export const DropInput = ({ files, setFiles }) => {
     }
   };
 
-  console.log(files);
-
   const handleDragEnter = (event) => {
     event.preventDefault();
     event.stopPropagation();

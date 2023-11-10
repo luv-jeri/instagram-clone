@@ -5,6 +5,7 @@
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s ease-in-out;
 }
 
 .title {
@@ -25,5 +26,22 @@
 
 .content {
   height: 100%;
-  width: 100%;
+  min-width: 45vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.left_content {
+  height: 100%;
+  width: 45vw;
+  overflow: hidden;
+}
+
+.right_content {
+  height: 100%;
+  width: 14vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
