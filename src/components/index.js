@@ -6,6 +6,7 @@ export { Loader } from "./core/Loader/Loader.jsx";
 export { Modal } from "./core/Modal/Modal.jsx";
 export { DropInput } from "./core/DropInput/DropInput.jsx";
 export { ImageViewer } from "./core/ImageViewer/ImageViewer.jsx";
+export { PostBox } from "./core/PostBox/PostBox.jsx";
 
 //* sections
 export { SideBar } from "./sections/SideBar/SideBar.jsx";

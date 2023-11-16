@@ -18,23 +18,12 @@ export const CreatePostModal = () => {
   const [open, setOpen] = useState(false);
   const [caption, setCaption] = useState("");
 
-  const getPost = async () => {
-    const res = await axios.get("/posts");
-    console.log(res.data);
-  };
-
-  useEffect(() => {
-    getPost();
-  }, []);
-
   const post = async () => {
     const res = await axios.post("/posts", {
       description: caption,
       contentUrl: uploadedURL,
     });
   };
-
-  console.log(open, "open");
 
   const storage = getStorage(app);
 
