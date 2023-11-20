@@ -1,6 +1,7 @@
 import s from "./Content.module.css";
 import { useState, useEffect } from "react";
-import { PostBox } from "@components";
+import { PostBox, Stories } from "@components";
+
 import axios from "axios";
 
 export const Content = () => {
@@ -18,6 +19,13 @@ export const Content = () => {
 
   return (
     <section className={s.container}>
+      <div
+        style={{
+          width: "100%",
+        }}
+      >
+        <Stories />
+      </div>
       {posts.map((el, index) => {
         return (
           <PostBox
